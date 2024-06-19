@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ear Training</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="Ear-training"><h1>Ear Training</h1></div>
+        <nav>
+            <ul>
+                <li><a href="#progress">Progress Tracking</a></li>
+                <li><a href="#game">Guess the Note Game</a></li> 
+        </nav>
+    </header>
+    <main>
+        <section id="progress">
+            <h2>Progress Tracking</h2>
+            <!-- User progress will be displayed here -->
+        </section>
+        <section id="game">
+            <h2>Guess the Note Game</h2>
+            <div class="container">
+                <p>Listen to the played note and guess which note it is:</p>
+                <button id="start-game">Start Game</button>
+                <div id="note-buttons">
+                    <button class="c note-btn">C</button>
+                    <button class="d note-btn">D</button>
+                    <button class="e note-btn">E</button>
+                    <button class="f note-btn">F</button>
+                    <button class="g note-btn">G</button>
+                    <button class="a note-btn">A</button>
+                    <button class="b note-btn">B</button>
+                </div>
+                <p id="result"></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ear Training. All rights reserved.</p>
+        <p>Made with love, cats-for-the-win 🐈</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
