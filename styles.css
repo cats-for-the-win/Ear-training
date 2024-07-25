@@ -1,145 +1,166 @@
-/* Reset default browser styling */
-* {
+/* Define CSS variables for light and dark modes */
+:root {
+    /* Light mode colors */
+    --background-color: #f9f3f6;
+    --header-background: #6a0d91;
+    --link-color: #ff77ff;
+    --button-background: #ff77ff;
+    --button-hover-background: #e05d95;
+    --note-button-border: #6a0d91;
+    --note-button-text: #6a0d91;
+    --note-button-hover-background: #6a0d91;
+    --note-button-hover-text: #fff;
+    --footer-background: #6a0d91;
+    --footer-border-top: #ff77ff;
+    --text-color: #333;
+}
+
+[data-theme="dark"] {
+    /* Dark mode colors */
+    --background-color: #1e1e1e;
+    --header-background: #333;
+    --link-color: #ff66b2;
+    --button-background: #ff66b2;
+    --button-hover-background: #cc5d99;
+    --note-button-border: #ff66b2;
+    --note-button-text: #ff66b2;
+    --note-button-hover-background: #ff66b2;
+    --note-button-hover-text: #1e1e1e;
+    --footer-background: #333;
+    --footer-border-top: #ff66b2;
+    --text-color: #fff;
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Body styles */
-body {
-    font-family: "Playwrite PL";
-    font-optical-sizing: auto;
-    background-color: rgb(99, 110, 114);
-    line-height: 1.6;
-}
-.Ear-training{
-    background-color:rgb(162, 155, 254) ;
-}
-/* Container for the entire content */
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgb(162, 155, 254);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgb(232, 67, 147);
-}
-
-/* Header styles */
 header {
+    background-color: var(--header-background);
+    color: #fff;
+    padding: 20px;
     text-align: center;
-    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 10px;
+header .Ear-training h1 {
+    margin: 0;
+    font-family: 'Playwrite PL', sans-serif;
+    font-size: 2.5em;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 20px 0 0;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
+    color: var(--link-color);
     text-decoration: none;
-    color:rgb(223, 230, 233);
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: rgb(253, 121, 168);
+    text-decoration: underline;
 }
 
-/* Main content section styles */
 main {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-section h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 15px;
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid var(--link-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-
-/* Footer styles */
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #333;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-/* Guess the Note Game section styles */
-#game {
-    border-bottom: 1px solid rgb(253, 121, 168);
-    padding-bottom: 20px;
-}
-
-#game .container {
+.container {
     text-align: center;
 }
 
-#game p {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #555;
+button {
+    background-color: var(--button-background);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-background);
 }
 
 #note-buttons {
-    margin-top: 10px;
+    margin: 20px 0;
 }
 
-#note-buttons .note-btn {
-    padding: 10px 20px;
-    font-size: 1.2rem;
+.note-btn {
+    background-color: #fff;
+    border: 2px solid var(--note-button-border);
+    color: var(--note-button-text);
+    padding: 15px;
+    font-size: 1.5em;
     margin: 5px;
-    background-color: rgb(253, 121, 168);
-    color: #fff;
-    border: none;
-    cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#note-buttons .note-btn:hover {
-    background-color: rgb(250, 177, 160);
+.note-btn:hover {
+    background-color: var(--note-button-hover-background);
+    color: var(--note-button-hover-text);
 }
 
-#start-game {
+footer {
+    background-color: var(--footer-background);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 2px solid var(--footer-border-top);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
     padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: rgb(232, 67, 147);
-    color: #fff;
-    font-family: "Playwrite PL";
+    background-color: var(--button-background);
+    color: white;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 1em;
 }
 
-#start-game:hover {
-    background-color: rgb(250, 177, 160);
-}
-
-#result {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    color: #333;
+.dark-mode-toggle:hover {
+    background-color: var(--button-hover-background);
 }
